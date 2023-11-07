@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <title>회원가입 페이지</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <style>
+            li {
+                list-style: none;
+            } 
+
+            .Notice {
+                background-color: white;
+                position: fixed;
+            }
+
+            .TNC {
+                border: 0.5px solid black;
+                padding: 15px;
+                margin-right: 50em;
+            }
+            .pink {
+                color: deeppink;
+                font-weight: bold; /*글씨 굵기*/
+            }
+            
+            .colorBtn {
+                width: 100px;
+                height: 36px;
+                background-color: dodgerblue;
+                position:relative;
+                top: 50px;
+                left: 140px; /*왼쪽에서 부터 오른쪽으로 140px 움직임*/ /*음수로 적을시 왼쪽으로 140px 움직임*/
+
+                color: aliceblue;
+                text-align: center; /*가운데 정렬*/
+                line-height: 36px; /*버튼 높이랑 똑같이 맞춰주면 글자가 가운데 높이로 이동*/
+                cursor: pointer; /*커서 모양*/
+                border-radius: 30px;
+            }
+        </style>
+
+        <form>
+            <ul>
+                <div class = "Notice">
+                    [공지] SNS 공유 이벤트 ~ 4월 30일까지! 자세한 사항은 >> <a href="http://www.tcpschool.com/html/html_basic_links">바로가기</a>
+                </div></br>
+                <li>
+                    <label>ID<input type="text" id = "ID"></label>
+                    <input type="button" value = "중복확인">
+                </li>
+                
+                <li>
+                    <label>P/W<input type="password" id = "P/W"></label>
+                </li>
+
+                <li>
+                    <label><input type="radio" name = "fruit" id = "orange">오렌지</label>
+                    <label><input type="radio" name = "fruit" id = "apple">사과</label>
+                    <label><input type="radio" name = "fruit" id = "grape">포도</label>
+                </li>
+
+                </br><label>약관동의<div class = "TNC">
+                    <li>
+                        <span>제 3자 개인 정보 제공 동의</span>
+                        <span>(선택)</span>
+                        <input type="checkbox"> 
+                    </li>
+    
+                    <li><br/>
+                        <span>이용 약관 동의</span>
+                        <span class = "pink">(필수)</span>
+                        <input type="checkbox">
+                    </li>
+                </div></label>
+                <label >모든 약관 동의<input type="checkbox" id = "allTNC"></label> 
+
+                <li><br/><div class = "colorBtn">다음</div></li>
+            </ul>
+        </form>
+    </body>
+</html>
+
+<!-- <div>와 <p>는 블럭 태그이다. <div>는 문자 정보를 입력할 수 있지만 실제로는 html문서의 영역 구별에 쓰인다. -->
+    <!-- <div>
+        <div id = "title">       --제목 영역--
+            <title>제목</title>
+        </div>
+
+        <div id = "content">     --본문 영역--
+            <p>본문</p>
+        </div>
+    </div> -->
