@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+    <title>흠?</title>
+    <style>
+        aside {
+            --g-bg-color: #fff;
+            --s-bg-color: #e6e6e6;
+            --s-bg-color-3: #eef2f6;
+            --s-bg-color-4: #f8f9fa;
+            --s-bg-color-5: #fafafa;
+            --s-menu-tabs: #bbb;
+            --color-level-1: #333;
+            --color-level-2: rgb(157, 170, 182);
+            --color-level-3: #777;
+            --border-color: #e4e8eb;
+            --border-color-2: #ccc;
+            --search-bg-color: #fff;
+            --swiper-theme-color: #007aff;
+            --swiper-navigation-size: 44px;
+            --vh: 12px;
+            --vw: 2.59px;
+            -webkit-text-size-adjust: none;
+            font-size: 16px;
+            font-weight: 400;
+            word-break: keep-all;
+            word-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            background-color: var(--s-bg-color);
+            color: var(--color-level-1);
+            overflow-x: hidden;
+            overflow-y: auto;
+            box-sizing: border-box;
+            z-index: 33;
+            transition: all 0.2s ease-in-out;
+            display: block;
+            width: 300px;
+            height: 100%;
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            visibility: initial;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 80px;
+            height: 36px;
+        }
+        .switch input { /*기존 checkbox의 디자인 숨기기*/
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .3s;
+            transition: .3s;
+        }
+        .slider:before{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            -webkit-transition: .3s;
+            transition: .3s;
+        }
+
+        input:checked + .slider {
+            background-color: dodgerblue;
+        }
+        input:focus + .slider {
+            box-shadow: 0 0 1px dodgerblue;
+        }
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        .side_bar_title {
+            padding-left: 20px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+
+        </div>
+    </header>
+    <aside class="side_bar">
+        <!--메뉴바-->
+        <div>
+            <!--토글 스위치/rounded-->
+            <!--스위치의 클릭시 true false 속성 이용-->
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider-round"></span>
+            </label>
+            <div>
+                <h4 class="side_bar_title">MENU</h2>
+                <ul class="category">
+                    <li>
+                        메뉴1
+                    </li>
+                    <li>
+                        메뉴2
+                    </li>
+                    <li>
+                        메뉴3
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+</body>
+</html>
