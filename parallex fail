@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parallex Effect</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+                scroll-behavior: smooth;
+            }
+            body {
+                min-height: 100vh;
+                background: linear-gradient(#2b1055, #7597de);
+                overflow-x: hidden;
+            }
+            header {
+                position: absolute; /*음 대충 레이어 분리라고 생각하셈*/
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 30px 100px; /* 세로방향 | 가로방향 */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 5000;
+            }
+            header .logo {
+                color: #fff;
+                font-weight: 700;
+                text-decoration: none; /*list 밑줄 삭제*/
+                font-size: 2em;
+                text-transform: uppercase; /* uppercase: 전부 대문자 | lowercase: 전부 소문자 */
+                letter-spacing: 2px;
+            }
+            header .menu.bar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            header .home-menu {
+                list-style: none;
+                margin-left: 20px;
+            }
+            header ul li a {
+                text-decoration: none;
+                color: #fff;
+                padding: 6px 15px;
+                border-radius: 20px;
+            }
+            header ul li a:hover, header ul li a.active{
+                background-color: #fff;
+                color: #2b1055;
+            }
+
+            section {
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                padding: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            section::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to top, #1c0522, transparent);
+            }
+            section img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /**/
+            }
+            section #frame {
+                z-index: 9;
+            }
+            section img #front-mt {
+                z-index: 10;
+            }
+
+            #text {
+                position: absolute;
+                color: #fff;
+                white-space: nowrap;
+                z-index: 9;
+                font-size: 7.5vw;
+            }
+
+            #btn {
+                text-decoration: none;
+                display: inline-block;
+                padding: 8px 30px;
+                background: #fff;
+                border-radius: 40px;
+                color: #2b1055;
+                font-size: 1.5em;
+                z-index: 559;
+                transform: translateY(200px);
+            }
+
+            .sec {
+                background: #1c0522;
+                position: relative;
+                padding:100px;
+            }
+            .sec h2 {
+                font-size: 3.5em;
+                margin-bottom: 10px;
+                color: #fff;
+            }
+            .sec p {
+                color: #fff;
+                font-size: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Logo</a>
+            <ul class="menu bar">
+                <li class="home-menu"><a href="#" class="active" id="home">Home</a></li>
+                <li class="home-menu"><a href="#" id="about">About</a></li>
+                <li class="home-menu"><a href="#" id="work">Work</a></li>
+                <li class="home-menu"><a href="#" id="contact">Contact</a></li>
+            </ul>
+        </header>
+        <section>
+            <img id="sky" src="C:\Users\user\OneDrive\바탕 화면\으우으ㅡ\sky.png">
+            <img id="back-mt" src="C:\Users\user\OneDrive\바탕 화면\으우으ㅡ\back mt.png">
+            <h2 id="text">Frame</h2>
+            <a href="#sec" id="btn">Scroll</a>
+            <img id="front-mt" src="C:\Users\user\OneDrive\바탕 화면\으우으ㅡ\front mt.png">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Parallex Scrolling</h2>
+            <p>
+                얼핏 보면 튜플과 리스트는 비슷한 역할을 하지만, 프로그래밍을 할 때 튜플과 리스트는 구별해서 사용하는 것이 유리하다. 튜플과 리스트의 가장 큰 차이는 요솟값을 변화시킬 수 있는지의 여부이다.
+                즉, 리스트의 요솟값은 변화가 가능하고 튜플의 요솟값은 변화가 불가능하다. 따라서 프로그램이 실행되는 동안 요솟값이 항상 변하지 않기를 바란다거나 값이 바뀔까 걱정하고 싶지 않다면
+                주저하지 말고 튜플을 사용해야 한다. 이와 반대로 수시로 그 값을 변화시켜야할 경우라면 리스트를 사용해야 한다. 실제 프로그램에서는 값이 변경되는 형태의 변수가 훨씬 많기 때문에 평균적으로 튜플보다 리스트를 더 많이 사용한다.
+                얼핏 보면 튜플과 리스트는 비슷한 역할을 하지만, 프로그래밍을 할 때 튜플과 리스트는 구별해서 사용하는 것이 유리하다. 튜플과 리스트의 가장 큰 차이는 요솟값을 변화시킬 수 있는지의 여부이다.
+                즉, 리스트의 요솟값은 변화가 가능하고 튜플의 요솟값은 변화가 불가능하다. 따라서 프로그램이 실행되는 동안 요솟값이 항상 변하지 않기를 바란다거나 값이 바뀔까 걱정하고 싶지 않다면
+                주저하지 말고 튜플을 사용해야 한다. 이와 반대로 수시로 그 값을 변화시켜야할 경우라면 리스트를 사용해야 한다. 실제 프로그램에서는 값이 변경되는 형태의 변수가 훨씬 많기 때문에 평균적으로 튜플보다 리스트를 더 많이 사용한다.
+                <br><br> 얼핏 보면 튜플과 리스트는 비슷한 역할을 하지만, 프로그래밍을 할 때 튜플과 리스트는 구별해서 사용하는 것이 유리하다. 튜플과 리스트의 가장 큰 차이는 요솟값을 변화시킬 수 있는지의 여부이다.
+                즉, 리스트의 요솟값은 변화가 가능하고 튜플의 요솟값은 변화가 불가능하다. 따라서 프로그램이 실행되는 동안 요솟값이 항상 변하지 않기를 바란다거나 값이 바뀔까 걱정하고 싶지 않다면
+                주저하지 말고 튜플을 사용해야 한다. 이와 반대로 수시로 그 값을 변화시켜야할 경우라면 리스트를 사용해야 한다. 실제 프로그램에서는 값이 변경되는 형태의 변수가 훨씬 많기 때문에 평균적으로 튜플보다 리스트를 더 많이 사용한다.
+                얼핏 보면 튜플과 리스트는 비슷한 역할을 하지만, 프로그래밍을 할 때 튜플과 리스트는 구별해서 사용하는 것이 유리하다. 튜플과 리스트의 가장 큰 차이는 요솟값을 변화시킬 수 있는지의 여부이다.
+                즉, 리스트의 요솟값은 변화가 가능하고 튜플의 요솟값은 변화가 불가능하다. 따라서 프로그램이 실행되는 동안 요솟값이 항상 변하지 않기를 바란다거나 값이 바뀔까 걱정하고 싶지 않다면
+                주저하지 말고 튜플을 사용해야 한다. 이와 반대로 수시로 그 값을 변화시켜야할 경우라면 리스트를 사용해야 한다. 실제 프로그램에서는 값이 변경되는 형태의 변수가 훨씬 많기 때문에 평균적으로 튜플보다 리스트를 더 많이 사용한다.
+                얼핏 보면 튜플과 리스트는 비슷한 역할을 하지만, 프로그래밍을 할 때 튜플과 리스트는 구별해서 사용하는 것이 유리하다. 튜플과 리스트의 가장 큰 차이는 요솟값을 변화시킬 수 있는지의 여부이다.
+                즉, 리스트의 요솟값은 변화가 가능하고 튜플의 요솟값은 변화가 불가능하다. 따라서 프로그램이 실행되는 동안 요솟값이 항상 변하지 않기를 바란다거나 값이 바뀔까 걱정하고 싶지 않다면
+                주저하지 말고 튜플을 사용해야 한다. 이와 반대로 수시로 그 값을 변화시켜야할 경우라면 리스트를 사용해야 한다. 실제 프로그램에서는 값이 변경되는 형태의 변수가 훨씬 많기 때문에 평균적으로 튜플보다 리스트를 더 많이 사용한다.
+                <br><br> 얼핏 보면 튜플과 리스트는 비슷한 역할을 하지만, 프로그래밍을 할 때 튜플과 리스트는 구별해서 사용하는 것이 유리하다. 튜플과 리스트의 가장 큰 차이는 요솟값을 변화시킬 수 있는지의 여부이다.
+                즉, 리스트의 요솟값은 변화가 가능하고 튜플의 요솟값은 변화가 불가능하다. 따라서 프로그램이 실행되는 동안 요솟값이 항상 변하지 않기를 바란다거나 값이 바뀔까 걱정하고 싶지 않다면
+                주저하지 말고 튜플을 사용해야 한다. 이와 반대로 수시로 그 값을 변화시켜야할 경우라면 리스트를 사용해야 한다. 실제 프로그램에서는 값이 변경되는 형태의 변수가 훨씬 많기 때문에 평균적으로 튜플보다 리스트를 더 많이 사용한다.
+                얼핏 보면 튜플과 리스트는 비슷한 역할을 하지만, 프로그래밍을 할 때 튜플과 리스트는 구별해서 사용하는 것이 유리하다. 튜플과 리스트의 가장 큰 차이는 요솟값을 변화시킬 수 있는지의 여부이다.
+                즉, 리스트의 요솟값은 변화가 가능하고 튜플의 요솟값은 변화가 불가능하다. 따라서 프로그램이 실행되는 동안 요솟값이 항상 변하지 않기를 바란다거나 값이 바뀔까 걱정하고 싶지 않다면
+                주저하지 말고 튜플을 사용해야 한다. 이와 반대로 수시로 그 값을 변화시켜야할 경우라면 리스트를 사용해야 한다. 실제 프로그램에서는 값이 변경되는 형태의 변수가 훨씬 많기 때문에 평균적으로 튜플보다 리스트를 더 많이 사용한다.
+                얼핏 보면 튜플과 리스트는 비슷한 역할을 하지만, 프로그래밍을 할 때 튜플과 리스트는 구별해서 사용하는 것이 유리하다. 튜플과 리스트의 가장 큰 차이는 요솟값을 변화시킬 수 있는지의 여부이다.
+                즉, 리스트의 요솟값은 변화가 가능하고 튜플의 요솟값은 변화가 불가능하다. 따라서 프로그램이 실행되는 동안 요솟값이 항상 변하지 않기를 바란다거나 값이 바뀔까 걱정하고 싶지 않다면
+                주저하지 말고 튜플을 사용해야 한다. 이와 반대로 수시로 그 값을 변화시켜야할 경우라면 리스트를 사용해야 한다. 실제 프로그램에서는 값이 변경되는 형태의 변수가 훨씬 많기 때문에 평균적으로 튜플보다 리스트를 더 많이 사용한다.
+                얼핏 보면 튜플과 리스트는 비슷한 역할을 하지만, 프로그래밍을 할 때 튜플과 리스트는 구별해서 사용하는 것이 유리하다. 튜플과 리스트의 가장 큰 차이는 요솟값을 변화시킬 수 있는지의 여부이다.
+                즉, 리스트의 요솟값은 변화가 가능하고 튜플의 요솟값은 변화가 불가능하다. 따라서 프로그램이 실행되는 동안 요솟값이 항상 변하지 않기를 바란다거나 값이 바뀔까 걱정하고 싶지 않다면
+                주저하지 말고 튜플을 사용해야 한다. 이와 반대로 수시로 그 값을 변화시켜야할 경우라면 리스트를 사용해야 한다. 실제 프로그램에서는 값이 변경되는 형태의 변수가 훨씬 많기 때문에 평균적으로 튜플보다 리스트를 더 많이 사용한다.
+                <br><br> 얼핏 보면 튜플과 리스트는 비슷한 역할을 하지만, 프로그래밍을 할 때 튜플과 리스트는 구별해서 사용하는 것이 유리하다. 튜플과 리스트의 가장 큰 차이는 요솟값을 변화시킬 수 있는지의 여부이다.
+                즉, 리스트의 요솟값은 변화가 가능하고 튜플의 요솟값은 변화가 불가능하다. 따라서 프로그램이 실행되는 동안 요솟값이 항상 변하지 않기를 바란다거나 값이 바뀔까 걱정하고 싶지 않다면
+            </p>
+        </div>
+
+        <script>
+            var sky = decument.getElementById('sky');
+            var frontMt = document.getElementById('front-mt');
+            var text = Document.getElementById('text');
+            var backMt = document.getElementById('back-mt');
+
+            window.addEventListener('scroll', function() {
+                var value = window.scrollY;
+                frontMt.style.top = value * 0.25 +'px';
+                text.style.left = value * 0.5 + 'px';
+                backMt.style.left = value * 0.25 + 'px';
+                sky.style.top = value * 0.25 + 'px';
+            })
+        </script>
+    </body>
+</html>
