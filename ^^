@@ -11,7 +11,7 @@
         body {
             top: 0;
             left: 0;
-            width: 1380px;
+            /* width: 1380px; */
             padding: 10px 25%;
             background: #F2F3F7;
         }
@@ -40,15 +40,20 @@
             padding: 10px;
         }
         .about {
-            bottom: 10%;
-            padding-right: 100px;
+            position: relative;
+            top: 15%;
+            padding: 20px 40px;
         }
         .contact {
-            
+            position: relative;
+            padding: 20px 40px;
         }
 
-        h2 {
-            display: inline-block;
+        h2 .about {
+            text-align: left;
+        }
+        h2 .contact {
+            text-align: left;
         }
         a {
             text-decoration: none;
@@ -197,7 +202,7 @@
                     <div>
                         <ul class="menu bar">
                             <li class="home-menu"><a href="#" class="active" id="home">Home</a></li>
-                            <li class="home-menu"><a href="#" id="about">About</a></li>
+                            <li class="home-menu"><a href="#about" id="about">About</a></li>
                             <li class="home-menu"><a href="#" id="work">Work</a></li>
                             <li class="home-menu"><a href="#" id="contact">Contact</a></li>
                         </ul>
